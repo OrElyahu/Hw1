@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".GameActivity"
+    >
 
     <ImageView
         android:layout_width="wrap_content"
@@ -54,7 +55,20 @@
                 android:src="@drawable/heart"
                 ></ImageView>
 
+            <TextView
+                android:id="@+id/panel_LBL_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="110dp"
+                android:text="0000"
+                android:textSize="30sp"
+                ></TextView>
+
         </LinearLayout>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -63,12 +77,6 @@
             android:orientation="horizontal">
 
 
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                ></ImageView>
 
             <ImageView
                 android:id="@+id/image00"
@@ -98,9 +106,21 @@
                 ></ImageView>
 
             <ImageView
+                android:id="@+id/image03"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:src="@drawable/templar"
+                android:visibility="invisible"
+                ></ImageView>
+
+            <ImageView
+                android:id="@+id/image04"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/templar"
+                android:visibility="invisible"
                 ></ImageView>
 
         </LinearLayout>
@@ -111,11 +131,7 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                ></ImageView>
+
 
             <ImageView
                 android:id="@+id/image10"
@@ -145,12 +161,25 @@
                 ></ImageView>
 
             <ImageView
+                android:id="@+id/image13"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:src="@drawable/templar"
+                android:visibility="invisible"
+                ></ImageView>
+
+            <ImageView
+                android:id="@+id/image14"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/templar"
+                android:visibility="invisible"
                 ></ImageView>
 
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -158,11 +187,7 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                ></ImageView>
+
 
             <ImageView
                 android:id="@+id/image20"
@@ -192,9 +217,21 @@
                 ></ImageView>
 
             <ImageView
+                android:id="@+id/image23"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:src="@drawable/templar"
+                android:visibility="invisible"
+                ></ImageView>
+
+            <ImageView
+                android:id="@+id/image24"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/templar"
+                android:visibility="invisible"
                 ></ImageView>
 
         </LinearLayout>
@@ -205,21 +242,12 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/leftButton"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
-                android:layout_weight="1"
-                android:layout_marginTop="50dp"
-                android:background="@drawable/left"
-                ></ImageButton>
-
             <ImageView
                 android:id="@+id/image30"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/assassin"
+                android:src="@drawable/templar"
                 android:visibility="invisible"
                 ></ImageView>
 
@@ -228,8 +256,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/assassin"
-                android:visibility="visible"
+                android:src="@drawable/templar"
+                android:visibility="invisible"
                 ></ImageView>
 
             <ImageView
@@ -237,21 +265,141 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:src="@drawable/templar"
+                android:visibility="invisible"
+                ></ImageView>
+
+            <ImageView
+                android:id="@+id/image33"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/templar"
+                android:visibility="invisible"
+                ></ImageView>
+
+            <ImageView
+                android:id="@+id/image34"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/templar"
+                android:visibility="invisible"
+                ></ImageView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/image40"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/templar"
+                android:visibility="invisible"
+                ></ImageView>
+
+            <ImageView
+                android:id="@+id/image41"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/templar"
+                android:visibility="invisible"
+                ></ImageView>
+
+            <ImageView
+                android:id="@+id/image42"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/templar"
+                android:visibility="invisible"
+                ></ImageView>
+
+            <ImageView
+                android:id="@+id/image43"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/templar"
+                android:visibility="invisible"
+                ></ImageView>
+
+            <ImageView
+                android:id="@+id/image44"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/templar"
+                android:visibility="invisible"
+                ></ImageView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+
+
+            <ImageView
+                android:id="@+id/image50"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:src="@drawable/assassin"
                 android:visibility="invisible"
                 ></ImageView>
 
-            <ImageButton
-                android:id="@+id/rightButton"
+            <ImageView
+                android:id="@+id/image51"
                 android:layout_width="0dp"
-                android:layout_height="60dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_marginTop="50dp"
-                android:background="@drawable/right"
-                ></ImageButton>
+                android:src="@drawable/assassin"
+                android:visibility="invisible"
+                ></ImageView>
+
+            <ImageView
+                android:id="@+id/image52"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/assassin"
+                android:visibility="visible"
+                ></ImageView>
+
+            <ImageView
+                android:id="@+id/image53"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/assassin"
+                android:visibility="invisible"
+                ></ImageView>
+
+            <ImageView
+                android:id="@+id/image54"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/assassin"
+                android:visibility="invisible"
+                ></ImageView>
+
+
 
         </LinearLayout>
 
 
     </LinearLayout>
 </RelativeLayout>
+
