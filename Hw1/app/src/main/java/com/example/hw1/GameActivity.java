@@ -375,9 +375,9 @@ public class GameActivity extends AppCompatActivity implements Serializable {
             callBackScore.setHasChanged(true);
 
         }
-//        Toast.makeText(getApplicationContext(),
-//                        "Game's Over",
-//                        Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),
+                        "Game's Over",
+                        Toast.LENGTH_LONG).show();
 
         finish();
 

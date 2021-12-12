@@ -12,7 +12,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class ScoreActivity extends AppCompatActivity {
 
     private Fragment_Score fragmentScore;
-    private Fragment_Map fragmentMap;
+    private FragmantMap fragmentMap;
     private static CallBack_Update callBackUpdate;
 
 
@@ -28,7 +28,7 @@ public class ScoreActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().add(R.id.frame1, fragmentScore).commit();
 
 
-        fragmentMap = new Fragment_Map();
+        fragmentMap = new FragmantMap();
         fragmentMap.setActivity(this);
         fragmentMap.setDataManager(callBackUpdate.getData());
         getSupportFragmentManager().beginTransaction().add(R.id.frame2, fragmentMap).commit();
