@@ -1,18 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:keepScreenOn="true">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_ground"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <FrameLayout
+            android:id="@+id/frame1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:layout_weight="4" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/BTN_DISCOVER"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="3dp"
+                android:layout_weight="1"
+                android:text="Discover"
+                android:textColor="@color/white"
+                android:textSize="6sp"
+                app:cornerRadius="50dp"
+                app:strokeColor="@color/white"
+                tools:ignore="SmallSp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/BTN_SEARCH"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="3dp"
+                android:layout_weight="1"
+                android:text="Search"
+                android:textColor="@color/white"
+                android:textSize="6sp"
+                app:cornerRadius="50dp"
+                app:strokeColor="@color/white"
+                tools:ignore="SmallSp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/BTN_MY_ORDERS"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="3dp"
+                android:layout_weight="1"
+                android:text="My Orders"
+                android:textColor="@color/white"
+                android:textSize="6sp"
+                app:cornerRadius="50dp"
+                app:strokeColor="@color/white"
+                tools:ignore="SmallSp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/BTN_ADD_EVENT"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Add event"
+                android:textColor="@color/white"
+                android:textSize="6sp"
+                app:cornerRadius="50dp"
+                app:strokeColor="@color/white"
+                tools:ignore="SmallSp" />
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</RelativeLayout>

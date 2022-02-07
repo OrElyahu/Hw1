@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:layout_margin="16dp">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:id="@+id/frame_discover_EDT_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search a specific party"
+        android:padding="16dp"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="30"
+            android:imeOptions="actionDone" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/frame_discover_BTN_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/frame_discover_EDT_search"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:text="Search"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:strokeColor="@color/white"
+        android:textColor="@color/white"
+        app:cornerRadius="50dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/frame_discover_result"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:layout_below="@id/frame_discover_BTN_search"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/logo"
+        android:scaleType="centerCrop" />
+
+
+
+</RelativeLayout>

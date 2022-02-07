@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/background"/>
+        android:src="@drawable/logo"/>
 
     <ImageView
         android:id="@+id/splash_IMG_logo"
