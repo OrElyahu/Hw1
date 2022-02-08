@@ -17,14 +17,14 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/party_IMG"
+            android:id="@+id/self_IMG"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:scaleType="centerCrop"
             android:src="@drawable/no_wifi" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/party_LBL_title"
+            android:id="@+id/self_LBL_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

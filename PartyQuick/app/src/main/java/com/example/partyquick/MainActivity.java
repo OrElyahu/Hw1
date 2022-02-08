@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Fragment_Search fragmentSearch;
     private Fragment_Discover fragmentDiscover;
+    private Fragment_My_Orders fragmentMyOrders;
 
     private int fragmentIndex = -1;
 
@@ -39,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
             if(fragmentSearch!=null){
                 getSupportFragmentManager().beginTransaction().hide(fragmentSearch).commit();
             }
+            if(fragmentMyOrders!=null){
+                getSupportFragmentManager().beginTransaction().hide(fragmentMyOrders).commit();
+            }
             fragmentDiscover = new Fragment_Discover();
             fragmentDiscover.setActivity(this);
             getSupportFragmentManager().beginTransaction().add(R.id.frame1, fragmentDiscover).commit();
@@ -53,9 +57,29 @@ public class MainActivity extends AppCompatActivity {
             if(fragmentDiscover!= null){
                 getSupportFragmentManager().beginTransaction().hide(fragmentDiscover).commit();
             }
+            if(fragmentMyOrders!=null){
+                getSupportFragmentManager().beginTransaction().hide(fragmentMyOrders).commit();
+            }
             fragmentSearch = new Fragment_Search();
             fragmentSearch.setActivity(this);
             getSupportFragmentManager().beginTransaction().add(R.id.frame1, fragmentSearch).commit();
+        });
+
+        BTN_MY_ORDERS = findViewById(R.id.BTN_MY_ORDERS);
+        BTN_MY_ORDERS.setOnClickListener(v -> {
+            if(fragmentIndex == FRAGMENT_MY_ORDERS_INDEX)
+                return;
+
+            fragmentIndex = FRAGMENT_MY_ORDERS_INDEX;
+            if(fragmentDiscover!= null){
+                getSupportFragmentManager().beginTransaction().hide(fragmentDiscover).commit();
+            }
+            if(fragmentSearch !=null){
+                getSupportFragmentManager().beginTransaction().hide(fragmentSearch).commit();
+            }
+            fragmentMyOrders = new Fragment_My_Orders();
+            fragmentMyOrders.setActivity(this);
+            getSupportFragmentManager().beginTransaction().add(R.id.frame1, fragmentMyOrders).commit();
         });
 
 

@@ -89,8 +89,8 @@ public class Adapter_Party extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
         public PartyViewHolder(final View itemView) {
             super(itemView);
-            this.party_IMG = itemView.findViewById(R.id.party_IMG);
-            this.party_LBL_title = itemView.findViewById(R.id.party_LBL_title);
+            this.party_IMG = itemView.findViewById(R.id.self_IMG);
+            this.party_LBL_title = itemView.findViewById(R.id.self_LBL_name);
             this.party_LBL_location = itemView.findViewById(R.id.party_LBL_location);
             this.party_LBL_date = itemView.findViewById(R.id.party_LBL_date);
 
