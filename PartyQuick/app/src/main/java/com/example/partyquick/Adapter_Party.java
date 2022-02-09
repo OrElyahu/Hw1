@@ -44,10 +44,6 @@ public class Adapter_Party extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
         partyViewHolder.party_LBL_title.setText(position + "\n" + party.getTitle());
         partyViewHolder.party_LBL_location.setText(party.getLocation());
-//        int h = party.getDuration() / 60;
-//        int m = party.getDuration() % 60;
-//        String hh = h < 10 ? "0" + h : "" + h;
-//        String mm = m < 10 ? "0" + m : "" + m;
         partyViewHolder.party_LBL_date.setText(party.getDate().toString());
 
 

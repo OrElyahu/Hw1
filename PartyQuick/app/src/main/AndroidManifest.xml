@@ -17,7 +17,13 @@
         </activity>
 
         <activity
-            android:name=".MainActivity"
+            android:name=".DashBoard"
+            android:exported="false"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".Login"
             android:exported="true"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait">
@@ -26,12 +32,18 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
         <activity
-            android:name=".LoginActivity"
+            android:name=".ManageOTP"
             android:exported="false"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait">
 
         </activity>

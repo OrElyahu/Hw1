@@ -10,7 +10,7 @@ public class DataManager {
 
         //TODO: generate parties from FireBase
         parties.add(new Party()
-                    .setTitle("Spartans")
+                    .setTitle("Lima Lima bar")
                     .setLocation("Tel-Aviv")
                     .setDate(new Date()
                             .setMonth(2)
