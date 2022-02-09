@@ -2,17 +2,14 @@ package com.example.partyquick;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,11 +19,13 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import java.util.concurrent.TimeUnit;
 
 public class ManageOTP extends AppCompatActivity {
-    private EditText t2;
-    private Button b2;
+    private TextInputLayout t2;
+    private MaterialButton b2;
     private String phoneNumber;
     private String otpId;
     private FirebaseAuth mAuth;
+    private Validator v;
+    private boolean isValid;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,24 +34,10 @@ public class ManageOTP extends AppCompatActivity {
 
         findViews();
         init();
-        initiateotp();
+        valid();
+        initOTP();
 
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                if(t2.getText().toString().isEmpty())
-                    Toast.makeText(getApplicationContext(),"Blank Field can not be processed",Toast.LENGTH_LONG).show();
-                else if(t2.getText().toString().length()!=6)
-                    Toast.makeText(getApplicationContext(),"Invalid OTP",Toast.LENGTH_LONG).show();
-                else
-                {
-                    PhoneAuthCredential credential=PhoneAuthProvider.getCredential(otpId,t2.getText().toString());
-                    signInWithPhoneAuthCredential(credential);
-                }
-
-            }
-        });
 
     }
 
@@ -61,12 +46,35 @@ public class ManageOTP extends AppCompatActivity {
         b2 = findViewById(R.id.b2);
     }
 
+    private void valid(){
+        v = Validator.Builder
+                .make(t2)
+                .addWatcher(new Validator.Watcher_Number("Not a number"))
+                .addWatcher(new Validator.Watcher_Exact_Len("Verify code contains 6 digits",6))
+                .build();
+
+    }
+
     private void init(){
         phoneNumber = getIntent().getStringExtra("mobile").toString();
         mAuth = FirebaseAuth.getInstance();
+        b2.setOnClickListener(view -> {
+            isValid = v.validateIt();
+            if(!isValid){
+                Toast.makeText(getApplicationContext(),this.v.getError(),Toast.LENGTH_LONG).show();
+            }
+            else if(t2.getEditText().getText().toString().isEmpty())
+                Toast.makeText(getApplicationContext(),"Blank Field can not be processed",Toast.LENGTH_LONG).show();
+            else
+            {
+                PhoneAuthCredential credential=PhoneAuthProvider.getCredential(otpId,t2.getEditText().getText().toString());
+                signInWithPhoneAuthCredential(credential);
+            }
+
+        });
     }
 
-    private void initiateotp()
+    private void initOTP()
     {
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
                 phoneNumber,        // Phone number to verify
@@ -90,7 +98,7 @@ public class ManageOTP extends AppCompatActivity {
                     public void onVerificationFailed(@NonNull FirebaseException e) {
                         Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_LONG).show();
                     }
-                });        // OnVerificationStateChangedCallbacks
+                });
 
     }
 
@@ -101,7 +109,6 @@ public class ManageOTP extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful())
                         {
-
                             startActivity(new Intent(ManageOTP.this,DashBoard.class));
                             finish();
 

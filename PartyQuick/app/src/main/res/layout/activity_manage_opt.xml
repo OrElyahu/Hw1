@@ -5,31 +5,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".manageotp">
+    tools:context=".ManageOTP">
 
-    <EditText
-        android:id="@+id/t2"
-        android:layout_width="271dp"
-        android:layout_height="58dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Enter OTP here"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.384" />
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_ground"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
 
-    <Button
-        android:id="@+id/b2"
-        android:layout_width="251dp"
-        android:layout_height="50dp"
-        android:text="Verify and Signin"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/t2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            android:hint="Enter OTP here"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/b2"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="3dp"
+            android:text="Verify"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:cornerRadius="50dp"
+            app:strokeColor="@color/white"
+            tools:ignore="SmallSp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.constraintlayout.widget.ConstraintLayout>
