@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login">
+    tools:context=".Register">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -16,18 +16,17 @@
         android:padding="20dp">
 
         <com.hbb20.CountryCodePicker
-            android:id="@+id/ccp"
+            android:id="@+id/ccp_register"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginTop="24dp"
             tools:ignore="MissingClass"
             app:ccp_defaultLanguage="ENGLISH"
-            android:layout_marginBottom="10dp"
             />
 
         <com.airbnb.lottie.LottieAnimationView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
             android:layout_centerInParent="true"
             app:lottie_autoPlay="true"
             android:elevation="5dp"
@@ -35,8 +34,26 @@
             app:lottie_repeatCount="@android:integer/status_bar_notification_info_maxnum"
             />
 
+
+
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/t1"
+            android:id="@+id/t_name_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            android:hint="Enter Full Name"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/t1_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:errorEnabled="true"
@@ -52,7 +69,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/t_password"
+            android:id="@+id/t_password_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:errorEnabled="true"
@@ -67,13 +84,13 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/b1"
+            android:id="@+id/b1_register"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:layout_marginEnd="3dp"
-            android:text="Login"
+            android:text="Register"
             android:textColor="@color/white"
             android:textSize="10sp"
             app:cornerRadius="50dp"
@@ -81,19 +98,19 @@
             tools:ignore="SmallSp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/BTN_Register"
+            android:id="@+id/BTN_Login"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_marginEnd="3dp"
-            android:text="Create Profile"
+            android:text="Already signed?"
             android:maxLines="2"
             android:textColor="@color/white"
             android:textSize="10sp"
             app:cornerRadius="50dp"
             app:strokeColor="@color/white"
             tools:ignore="SmallSp"
-            android:layout_marginTop="50dp"/>
+            />
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>

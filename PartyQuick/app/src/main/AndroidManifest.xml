@@ -46,6 +46,14 @@
             android:screenOrientation="portrait">
 
         </activity>
+
+        <activity
+            android:name=".Register"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
     </application>
 
 </manifest>

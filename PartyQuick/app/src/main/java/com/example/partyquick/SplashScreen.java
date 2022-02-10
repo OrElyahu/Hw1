@@ -11,8 +11,8 @@ import com.airbnb.lottie.LottieAnimationView;
 
 public class SplashScreen extends AppCompatActivity {
 
-    TextView appName;
-    LottieAnimationView lottie;
+    private TextView appName;
+    private LottieAnimationView lottie;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,7 @@ public class SplashScreen extends AppCompatActivity {
             public void run() {
                 Intent intent = new Intent(getApplicationContext(), Login.class);
                 startActivity(intent);
+                finish();
             }
         },5000);
     }
